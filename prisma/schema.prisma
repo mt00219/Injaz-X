@@ -1,0 +1,59 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id            String   @id @default(cuid())
+  nationalId    String   @unique
+  name          String
+  email         String?  @unique
+  phone         String?
+  password      String
+  userType      String   @default("INDIVIDUAL")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  issuedNotes   Note[]   @relation("Creditor")
+  receivedNotes Note[]   @relation("Debtor")
+}
+
+model Note {
+  id               String      @id @default(cuid())
+  noteNumber       String      @unique
+  amount           Float
+  currency         String      @default("SAR")
+  dueDate          DateTime
+  issueDate        DateTime    @default(now())
+  description      String?
+  purpose          String?
+  status           String      @default("PENDING")
+
+  creditorId       String
+  creditor         User        @relation("Creditor", fields: [creditorId], references: [id])
+
+  debtorId         String?
+  debtor           User?       @relation("Debtor", fields: [debtorId], references: [id])
+  debtorNationalId String?
+
+  signedAt         DateTime?
+  paidAt           DateTime?
+
+  history          NoteHistory[]
+
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+}
+
+model NoteHistory {
+  id        String   @id @default(cuid())
+  noteId    String
+  note      Note     @relation(fields: [noteId], references: [id], onDelete: Cascade)
+  action    String
+  details   String?
+  actorName String?
+  createdAt DateTime @default(now())
+}
