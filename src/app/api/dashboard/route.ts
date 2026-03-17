@@ -32,8 +32,8 @@ export async function GET() {
   const pendingNotes    = all.filter((n) => n.status === "PENDING").length;
   const overdueNotes    = all.filter((n) => n.status === "OVERDUE").length;
   const paidNotes       = all.filter((n) => n.status === "PAID").length;
-  const totalAmountIssued = all.reduce((s, n) => s + n.amount, 0);
-  const totalAmountPaid   = all.filter((n) => n.status === "PAID").reduce((s, n) => s + n.amount, 0);
+  const totalAmountIssued = all.filter((n) => n.creditorId === userId).reduce((s, n) => s + n.amount, 0);
+  const totalAmountPaid   = all.filter((n) => n.creditorId === userId && n.status === "PAID").reduce((s, n) => s + n.amount, 0);
 
   // Build monthly data for last 6 months
   const now = new Date();

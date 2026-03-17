@@ -128,7 +128,7 @@ export default function RegisterPage() {
             <Shield className="w-6 h-6 text-white" />
           </div>
           <div>
-            <p className="text-white font-black text-xl">{t("إنجاز إكس", "Injaz X")}</p>
+            <p className="text-white font-black text-xl">{t("سند", "Sanad")}</p>
             <p className="text-white/50 text-xs">{t("منصة السندات الإلكترونية", "Electronic Notes Platform")}</p>
           </div>
         </div>

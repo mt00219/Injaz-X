@@ -3,9 +3,9 @@ import "./globals.css";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
-  title: "إنجاز إكس | Injaz X - منصة السندات الإلكترونية",
+  title: "سند | Sanad - منصة السندات الإلكترونية",
   description:
-    "منصة إنجاز إكس للسندات الإلكترونية - إصدار وإدارة وتتبع السندات الإلكترونية بشكل آمن وموثوق",
+    "منصة سند للسندات الإلكترونية - إصدار وإدارة وتتبع السندات الإلكترونية بشكل آمن وموثوق",
   icons: {
     icon: "/favicon.ico",
   },

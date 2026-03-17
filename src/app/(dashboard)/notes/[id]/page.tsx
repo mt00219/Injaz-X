@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { Header } from "@/components/layout/Header";
 import { StatusBadge } from "@/components/ui/Badge";
 import { useLanguage } from "@/context/LanguageContext";
 import { formatCurrency, formatDate } from "@/lib/utils";
+import { printNote } from "@/lib/printNote";
 import {
   FileText,
   ArrowLeft,
@@ -169,7 +170,10 @@ export default function NoteDetailPage() {
                 {t("إلغاء", "Cancel")}
               </button>
             )}
-            <button className="flex items-center gap-2 px-4 py-2 border-2 border-[#E2E8F0] text-[#475569] text-sm font-semibold rounded-xl hover:bg-[#F8FAFC] transition-colors">
+            <button
+              onClick={() => printNote(note)}
+              className="flex items-center gap-2 px-4 py-2 border-2 border-[#E2E8F0] text-[#475569] text-sm font-semibold rounded-xl hover:bg-[#F8FAFC] transition-colors"
+            >
               <Download className="w-4 h-4" />
               {t("تحميل", "Download")}
             </button>

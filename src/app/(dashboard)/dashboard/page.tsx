@@ -270,7 +270,9 @@ export default function DashboardPage() {
                         {note.noteNumber}
                       </p>
                       <p className="text-xs text-[#64748B]">
-                        {t("المدين:", "Debtor:")} {note.debtor?.name ?? note.debtorNationalId ?? t("—", "—")}
+                        {user?.id === note.creditor.id
+                          ? `${t("المدين:", "Debtor:")} ${note.debtor?.name ?? note.debtorNationalId ?? t("—", "—")}`
+                          : `${t("الدائن:", "Creditor:")} ${note.creditor.name}`}
                       </p>
                     </div>
                   </div>

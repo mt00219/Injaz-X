@@ -57,7 +57,7 @@ export default function LoginPage() {
             <Shield className="w-6 h-6 text-white" />
           </div>
           <div>
-            <p className="text-white font-black text-xl">{t("إنجاز إكس", "Injaz X")}</p>
+            <p className="text-white font-black text-xl">{t("سند", "Sanad")}</p>
             <p className="text-white/50 text-xs">{t("منصة السندات الإلكترونية", "Electronic Notes Platform")}</p>
           </div>
         </div>
@@ -67,7 +67,7 @@ export default function LoginPage() {
           <h2 className="text-5xl font-black text-white leading-tight mb-6">
             {t("مرحباً بك في", "Welcome to")}
             <br />
-            <span className="text-[#4ADE80]">{t("إنجاز إكس", "Injaz X")}</span>
+            <span className="text-[#4ADE80]">{t("سند", "Sanad")}</span>
           </h2>
           <p className="text-white/70 text-lg leading-relaxed mb-10">
             {t(
@@ -115,7 +115,7 @@ export default function LoginPage() {
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#006C35] to-[#00A651] flex items-center justify-center">
               <Shield className="w-5 h-5 text-white" />
             </div>
-            <p className="text-[#1B2B4B] font-black text-xl">{t("إنجاز إكس", "Injaz X")}</p>
+            <p className="text-[#1B2B4B] font-black text-xl">{t("سند", "Sanad")}</p>
           </div>
 
           <div className="flex items-center justify-between mb-8">

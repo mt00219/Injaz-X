@@ -117,7 +117,7 @@ export default function LandingPage() {
             </div>
             <div>
               <p className="text-[#1B2B4B] font-bold text-lg leading-tight">
-                {t("إنجاز إكس", "Injaz X")}
+                {t("سند", "Sanad")}
               </p>
               <p className="text-[#94A3B8] text-xs leading-none">
                 {t("منصة السندات الإلكترونية", "Electronic Notes Platform")}
@@ -181,14 +181,14 @@ export default function LandingPage() {
 
           {/* Headline */}
           <h1 className="text-5xl md:text-7xl font-black text-white leading-tight mb-6">
-            {t("منصة", "The Future of")}
-            <br />
-            <span className="bg-gradient-to-r from-[#4ADE80] via-[#00A651] to-[#C9A84C] bg-clip-text text-transparent">
-              {t("إنجاز إكس", "Injaz X")}
-            </span>
+            {t("مستقبل", "The Future of")}
             <br />
             <span className="text-3xl md:text-4xl text-white/70 font-light">
-              {t("للسندات الإلكترونية", "Electronic Notes")}
+              {t("السندات الإلكترونية", "Electronic Notes")}
+            </span>
+            <br />
+            <span className="bg-gradient-to-r from-[#4ADE80] via-[#00A651] to-[#C9A84C] bg-clip-text text-transparent">
+              {t("سند", "Sanad")}
             </span>
           </h1>
 
@@ -254,7 +254,7 @@ export default function LandingPage() {
               {t("مميزات المنصة", "Platform Features")}
             </span>
             <h2 className="text-4xl font-black text-[#0F172A] mb-4">
-              {t("لماذا إنجاز إكس؟", "Why Injaz X?")}
+              {t("لماذا سند؟", "Why Sanad?")}
             </h2>
             <p className="text-lg text-[#64748B] max-w-2xl mx-auto">
               {t(
@@ -296,7 +296,7 @@ export default function LandingPage() {
               {t("خطوات بسيطة", "Simple Steps")}
             </span>
             <h2 className="text-4xl font-black text-[#0F172A] mb-4">
-              {t("كيف يعمل إنجاز إكس؟", "How Does Injaz X Work?")}
+              {t("كيف يعمل سند؟", "How Does Sanad Work?")}
             </h2>
           </div>
 
@@ -336,8 +336,8 @@ export default function LandingPage() {
           </h2>
           <p className="text-xl text-white/70 mb-10 leading-relaxed">
             {t(
-              "انضم إلى الآلاف من الأفراد والشركات الذين يثقون بمنصة إنجاز إكس لإدارة سنداتهم الإلكترونية",
-              "Join thousands of individuals and companies who trust Injaz X for managing their electronic notes"
+              "انضم إلى الآلاف من الأفراد والشركات الذين يثقون بمنصة سند لإدارة سنداتهم الإلكترونية",
+              "Join thousands of individuals and companies who trust Sanad for managing their electronic notes"
             )}
           </p>
           <div className="flex items-center justify-center gap-4 flex-wrap">
@@ -372,12 +372,12 @@ export default function LandingPage() {
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#006C35] to-[#00A651] flex items-center justify-center">
                 <Shield className="w-4 h-4 text-white" />
               </div>
-              <span className="text-white font-bold">{t("إنجاز إكس", "Injaz X")}</span>
+              <span className="text-white font-bold">{t("سند", "Sanad")}</span>
             </div>
             <p className="text-[#64748B] text-sm text-center">
               {t(
-                "© 2025 إنجاز إكس. جميع الحقوق محفوظة.",
-                "© 2025 Injaz X. All rights reserved."
+                "© 2025 سند. جميع الحقوق محفوظة.",
+                "© 2025 Sanad. All rights reserved."
               )}
             </p>
             <div className="flex items-center gap-4 text-sm text-[#64748B]">

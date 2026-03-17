@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useCallback } from "react";
+import { useSession } from "next-auth/react";
 import { Header } from "@/components/layout/Header";
 import { StatusBadge } from "@/components/ui/Badge";
 import { useLanguage } from "@/context/LanguageContext";
@@ -26,6 +27,8 @@ const ROLES = [
 
 export default function NotesPage() {
   const { t, isRTL, lang } = useLanguage();
+  const { data: session } = useSession();
+  const user = session?.user as any;
   const [notes, setNotes] = useState<NoteWithParties[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
@@ -168,10 +171,21 @@ export default function NotesPage() {
                     </div>
                   </div>
                   <div className="col-span-2 hidden md:block">
-                    <p className="text-sm font-medium text-[#0F172A] truncate">
-                      {note.debtor?.name ?? note.debtorNationalId ?? "—"}
-                    </p>
-                    <p className="text-xs text-[#94A3B8]">{note.debtor?.nationalId ?? "—"}</p>
+                    {user?.id === note.creditor.id ? (
+                      <>
+                        <p className="text-sm font-medium text-[#0F172A] truncate">
+                          {note.debtor?.name ?? note.debtorNationalId ?? "—"}
+                        </p>
+                        <p className="text-xs text-[#94A3B8]">{t("مدين", "Debtor")}</p>
+                      </>
+                    ) : (
+                      <>
+                        <p className="text-sm font-medium text-[#0F172A] truncate">
+                          {note.creditor.name}
+                        </p>
+                        <p className="text-xs text-[#94A3B8]">{t("دائن", "Creditor")}</p>
+                      </>
+                    )}
                   </div>
                   <div className="col-span-2">
                     <p className="text-sm font-bold text-[#0F172A]">{formatCurrency(note.amount)}</p>
